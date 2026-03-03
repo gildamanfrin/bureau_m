@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Content Direction for Fashion studio - Bureau M</title>
+
+<style>
+@font-face{
+  font-family: "Junicode";
+  src: url("./Junicode.woff2") format("woff2"),
+       url("./Junicode.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face{
+  font-family:"Geist Mono";
+  src:url("./GeistMono-Light.woff2") format("woff2");
+  font-weight:300;
+  font-style:normal;
+  font-display:swap;
+}
+
+:root{
+  --bg:#c3c1cc;
+  --text:#111111;
+  --pad-x: clamp(18px, 3vw, 38px);
+  --pad-y: clamp(28px, 4vw, 54px);
+  --max: 1400px;
+}
+
+*{ box-sizing:border-box; }
+
+body{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap{
+  flex:1;
+  padding:90px 40px 60px 40px;
+}
+
+/* Hero */
+.logo{
+  transform: translateY(3px);
+}
+
+.logo img{
+  display:block;
+  height:clamp(24px, 2.6vw, 40px);
+  width:auto;
+}
+
+
+/* Hero layout: precise alignment */
+.hero{
+  display:grid;
+  grid-template-columns: auto 1fr;
+  column-gap:20px;
+  align-items:baseline;
+}
+
+.logo-text{
+  font-family:"Geist Mono", ui-monospace, monospace;
+  font-weight:300;
+  font-size:clamp(18px, 2.2vw, 28px);
+  letter-spacing:0.10em;
+  line-height:1;
+  white-space:nowrap;
+}
+
+.hero-copy{
+  min-width:0;
+}
+
+/* Keep previous typography */
+.first-line{
+  margin:0;
+}
+
+.second-block{
+  margin-top:6px;
+  width:100%;
+  max-width:none;
+}
+
+/* inline qualifier stays subtle */
+@media (max-width:900px){
+  .hero{
+    grid-template-columns:1fr;
+    row-gap:14px;
+    align-items:start;
+  }
+}
+.first-line{
+  font-family:"Junicode", Georgia, serif;
+  font-size:clamp(26px, 3.2vw, 42px);
+  line-height:1.12;
+  letter-spacing:0.005em;
+  max-width:30em;
+}
+
+.second-block{
+  display:block;
+  width:100%;
+  max-width:none;
+  margin-left:0;
+
+  margin-left:0;
+  font-family:"Junicode", Georgia, serif;
+  font-size:clamp(26px, 3.2vw, 42px);
+  line-height:1.12;
+  letter-spacing:0.005em;
+  margin-top:6px;
+  }
+
+
+.footer{
+  font-family:"Junicode", Georgia, serif;
+  font-size:12px;
+  margin-top:90px;
+  opacity:0.6;
+}
+
+.footer a{
+  text-decoration:none;
+  color:inherit;
+}
+
+
+.qualifier{
+  font-family:"Geist Mono", ui-monospace, monospace;
+  font-size:clamp(13px, 0.95vw, 15px);
+  line-height:1.45;
+  letter-spacing:0.02em;
+  margin-top:18px;
+  opacity:0.85;
+}
+
+
+.scope{
+  font-family:"Geist Mono", ui-monospace, monospace;
+  font-size:clamp(14px, 1vw, 16px);
+  line-height:1.45;
+  letter-spacing:0.01em;
+  margin-top:40px;
+}
+
+
+.footer-bar{
+  background:#000;
+  color:#fff;
+  margin-top:120px;
+  padding:40px 40px 30px 40px;
+}
+
+.footer-inner{
+  max-width:1200px;
+}
+
+.footer-title{
+  font-family:"Junicode", Georgia, serif;
+  font-size:14px;
+  opacity:0.8;
+  margin-bottom:12px;
+}
+
+.footer-clients{
+  font-family:"Junicode", Georgia, serif;
+  font-size:12px;
+  letter-spacing:0.06em;
+  line-height:1.8;
+  margin-bottom:25px;
+}
+
+.footer-credit{
+  font-family:"Junicode", Georgia, serif;
+  font-size:12px;
+  opacity:0.6;
+}
+
+
+.credit-bar{
+  margin-top:0;
+  background:#000;
+  color:#fff;
+  padding:12px 40px;
+}
+
+.credit-inner{
+  font-family:"Junicode", Georgia, serif;
+  font-size:14px;
+  opacity:0.95;
+}
+
+.credit-inner a{
+  color:#fff;
+  text-decoration:none;
+}
+
+
+.experience-label{
+  font-family:"Junicode", Georgia, serif;
+  font-size:14px;
+  margin-top:60px;
+  opacity:0.8;
+}
+
+.experience{
+  font-family:"Junicode", Georgia, serif;
+  font-size:12px;
+  letter-spacing:0.05em;
+  line-height:1.6;
+  margin-top:8px;
+}
+
+
+.bottom-block{
+  margin-top:10px;
+  padding-bottom:0px;
+}
+
+
+.contacts{
+  font-family:"Junicode", Georgia, serif;
+  font-size:16px;
+  margin-bottom:10px;
+}
+.contacts a{
+  text-decoration:none;
+  color:inherit;
+  border-bottom:1px solid currentColor;
+}
+
+
+/* --- Dots background + sound toggle --- */
+#bgDots{
+  position:fixed;
+  inset:0;
+  width:100vw;
+  height:100vh;
+  z-index:-1;
+  pointer-events:none;
+}
+.sound-toggle{
+  position:fixed;
+  top:40px;
+  right:40px;
+  z-index:20;
+  font-family:"Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size:12px;
+  line-height:1;
+  letter-spacing:0.06em;
+  background:transparent;
+  border:1px solid rgba(0,0,0,0.35);
+  color:#000;
+  padding:10px 12px;
+  border-radius:999px;
+  cursor:pointer;
+}
+.sound-toggle:hover{ border-color:rgba(0,0,0,0.7); }
+@media (max-width:640px){
+  .sound-toggle{ top:20px; right:20px; padding:9px 11px; }
+}
+@media (prefers-reduced-motion: reduce){
+  #bgDots{ display:none; }
+}
+
+
+/* --- tiny logo nudge (keeps overall proportions) --- */
+.logo, .logo-text, .brand, .brandmark{
+  
+}
+
+
+/* --- precise baseline alignment between logo and intro sentence --- */
+.top-row, .hero-row, .header-row, .intro-row {
+  display: flex;
+  align-items: baseline !important;
+}
+
+
+
+
+/* Super clean editorial hero */
+.hero-clean{
+  display:block;
+}
+
+.headline{
+  font-family:"Junicode", Georgia, serif;
+  font-size:clamp(26px, 3.2vw, 42px);
+  line-height:1.12;
+  letter-spacing:0.005em;
+}
+
+.brand{
+  font-family:"Geist Mono", ui-monospace, monospace;
+  letter-spacing:0.10em;
+  margin-right:14px;
+}
+
+
+.location{
+  font-family:"Geist Mono", ui-monospace, monospace;
+  font-size:12px;
+  letter-spacing:0.06em;
+  opacity:0.7;
+  margin-top:10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<canvas id="bgDots" aria-hidden="true"></canvas>
+<button id="toggleAudio" class="sound-toggle" type="button" aria-pressed="false">Sound On</button>
+
+<main class="wrap">
+
+  
+  
+  <div class="hero-clean">
+    <div class="headline">
+      <span class="brand">BUREAU_M</span> is a consultancy practice specializing in the optimization of digital presence for independent brands in fashion, luxury, design.
+    </div>
+
+    <div class="second-block">
+      We replace erratic content production with scalable strategic systems, bridging the gap between creative vision and commercial conversion.
+    </div>
+
+    <div class="scope">
+    Cultural editorial research · Strategic positioning<br>
+    Narrative development & editorial strands (product – values – people) · Digital editorial planning<br>
+    Content direction & production supervision (photo, video, text)
+  </div>
+    <br><br>
+    <div class="contacts">
+    Project enquiries → <a href="mailto:bureau@gildamanfrin.com">bureau@gildamanfrin.com</a>
+  </div>
+  <div class="location">Milan / Remote</div>
+
+    <br>
+  </div>
+
+
+
+</div>
+
+
+  <footer class="footer">
+    
+  </footer>
+
+
+  
+  
+  <br><div class="bottom-block">
+
+  
+<div class="experience-label">
+    Selected experience (freelance, in-house, agency)
+  </div>
+  <div class="experience">
+    ASPESI, BULGARI, CORNELIANI, DOLCE & GABBANA, DUVETICA, ELENA MIRÒ, GUCCI / GUCCI EQUILIBRIUM, IBLUES, LA BIENNALE DI VENEZIA, LISA CORTI,<br>MANINTOWN, MOËT & CHANDON, RUBINACCI, TRUSSARDI, VALEXTRA, VERSACE, WHITE MILANO
+  </div>
+  </div>
+
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="credit-bar">
+  <div class="credit-inner">
+    A project by Gilda Manfrin · <a href="#">Ideas</a> · <a href="#">Music</a>
+  </div>
+</footer>
+
+
+<script id="dots-audio-bg">
+(function(){
+  function err(){ /* silent */ }
+
+  // ---- Audio (Web Audio API) ----
+  try{
+    let actx=null, master=null, oscByColor=[], running=false;
+    const BASE=[110,140,170,200];
+    function ensure(){
+      if(actx) return;
+      actx=new (window.AudioContext||window.webkitAudioContext)();
+      master=actx.createGain(); master.gain.value=0.0; master.connect(actx.destination);
+      oscByColor=BASE.map(f=>{
+        const o=actx.createOscillator(); o.type='sine'; o.frequency.value=f;
+        const g=actx.createGain(); g.gain.value=0.12; o.connect(g).connect(master); o.start();
+        return {o, curr:f, min:Math.max(60,f*0.5), max:Math.min(800,f*6), count:0};
+      });
+    }
+    window.__bump=function(idx){
+      if(!actx) return;
+      const n=oscByColor[idx]; if(!n) return;
+      n.count=(n.count||0)+1;
+      const next=(n.count%2? n.curr*1.5 : n.curr/2);
+      n.curr=Math.min(n.max,Math.max(n.min,next));
+      const now=actx.currentTime;
+      n.o.frequency.cancelScheduledValues(now);
+      n.o.frequency.setTargetAtTime(n.curr, now, 0.08);
+    };
+
+    const btn=document.getElementById('toggleAudio');
+    async function audioOn(){
+      ensure();
+      if(actx.state==='suspended') await actx.resume();
+      master.gain.setTargetAtTime(0.16, actx.currentTime, 0.1);
+      running=true;
+      if(btn){ btn.textContent='Sound Off'; btn.setAttribute('aria-pressed','true'); }
+    }
+    async function audioOff(){
+      if(!actx) return;
+      master.gain.setTargetAtTime(0.0, actx.currentTime, 0.08);
+      try{ await actx.suspend(); }catch{}
+      running=false;
+      if(btn){ btn.textContent='Sound On'; btn.setAttribute('aria-pressed','false'); }
+    }
+    if(btn){
+      btn.addEventListener('click', ()=>{ if(!running) { audioOn(); } else { audioOff(); } });
+    }
+    // Autoresume only after first user gesture (safe)
+    addEventListener('pointerdown', ()=>{ if(!running){ setTimeout(()=>{ audioOn(); },0);} }, {once:true, passive:true});
+  }catch(e){ err(e); }
+
+  // ---- Dots background (canvas) ----
+  try{
+    const c=document.getElementById('bgDots');
+    if(!c) return;
+    const ctx=c.getContext('2d');
+    const DOT_R=7;
+    const PAL=['rgba(128,115,160,0.18)','rgba(128,115,160,0.18)','rgba(128,115,160,0.18)','rgba(128,115,160,0.18)'];
+    function resize(){
+      const dpr=Math.min(window.devicePixelRatio||1, 2);
+      c.width=Math.floor(innerWidth*dpr);
+      c.height=Math.floor(innerHeight*dpr);
+      c.style.width='100vw'; c.style.height='100vh';
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+    }
+    addEventListener('resize', resize, {passive:true});
+    resize();
+
+    const N=40;
+    const dots=Array.from({length:N},(_,i)=>({
+      x:Math.random()*innerWidth,
+      y:Math.random()*innerHeight,
+      vx:(Math.random()-.5)*.18,
+      vy:(Math.random()-.5)*.18,
+      colorIndex:i%PAL.length,
+      cd:0
+    }));
+
+    function step(){
+      ctx.fillStyle='#C3C1CC';
+      ctx.fillRect(0,0,innerWidth,innerHeight);
+
+      for(let i=0;i<dots.length;i++){
+        const a=dots[i];
+        a.x+=a.vx; a.y+=a.vy;
+        a.cd=Math.max(0,a.cd-1);
+
+        if(a.x<DOT_R || a.x>innerWidth-DOT_R) a.vx*=-1;
+        if(a.y<DOT_R || a.y>innerHeight-DOT_R) a.vy*=-1;
+
+        ctx.fillStyle=PAL[a.colorIndex];
+        ctx.beginPath();
+        ctx.arc(a.x,a.y,DOT_R,0,Math.PI*2);
+        ctx.fill();
+
+        for(let j=i+1;j<dots.length;j++){
+          const b=dots[j];
+          const dx=a.x-b.x, dy=a.y-b.y;
+          if(dx*dx+dy*dy < (DOT_R*2)*(DOT_R*2)){
+            const tvx=a.vx; a.vx=b.vx; b.vx=tvx;
+            const tvy=a.vy; a.vy=b.vy; b.vy=tvy;
+            if(a.cd===0){ window.__bump && window.__bump(a.colorIndex); a.cd=8; }
+            if(b.cd===0){ window.__bump && window.__bump(b.colorIndex); b.cd=8; }
+          }
+        }
+      }
+      requestAnimationFrame(step);
+    }
+
+    if(!matchMedia('(prefers-reduced-motion: reduce)').matches) step();
+  }catch(e){ err(e); }
+})();
+</script>
+
+</body>
+</html>
